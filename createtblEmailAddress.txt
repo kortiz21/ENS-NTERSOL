@@ -1,0 +1,7 @@
+CREATE TABLE `EmailAddress` (
+  `EmailAddressID` int NOT NULL,
+  `GUID` int DEFAULT NULL,
+  `Address` varchar(255) DEFAULT NULL,
+  `EmailAddressGUID` int DEFAULT NULL,
+  PRIMARY KEY (`EmailAddressID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
