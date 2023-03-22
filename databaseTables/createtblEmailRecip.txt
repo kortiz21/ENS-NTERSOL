@@ -1,0 +1,8 @@
+CREATE TABLE `sys`.`EmailRecipient` (
+  `EmailRecipientID` INT NOT NULL,
+  `GUID` VARCHAR(45) NULL,
+  `EmailID` VARCHAR(45) NULL,
+  `EmailAddressID` VARCHAR(45) NULL,
+  `CCflag` VARCHAR(45) NULL,
+  `EmailsGUID` VARCHAR(45) NULL,
+  PRIMARY KEY (`EmailRecipientID`));
