@@ -1,0 +1,122 @@
+body
+{
+    background-color: aquamarine;
+}
+
+input[type=text]
+{
+    width: 98%;
+    padding: 12px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=email]
+{
+    width: 98%;
+    padding: 12px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=file]
+{
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    transition: width 0.4s ease-in-out;
+    color: gray;
+    font-size:20pt;
+    font: sans-serif;
+    text-align: right;
+}
+
+input[type=submit]
+{
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    transition: width 0.4s ease-in-out;
+    color: gray;
+    font-size:20pt;
+    font: sans-serif;
+    text-align: right;
+}
+
+input[type=text]:focus
+{
+    width: 100%;
+}
+
+input[type=email]:focus
+{
+    width: 100%;
+}
+
+textarea
+{
+    width: 98%;
+    height: 50pt;
+    padding: 12px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    transition: width 1s ease-in-out;
+}
+
+textarea:focus
+{
+    width: 100%;
+    height: 100pt;
+}
+
+div
+{
+    vertical-align: center;
+    width: 30%;
+}
+
+.formInside
+{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ourForm
+{
+    height: 500pt;
+    width: 500pt;
+}
+
+h1
+{
+    color: black;
+    font-size:30pt;
+    font: sans-serif;
+    text-align: left;
+}
+
+label
+{
+    color: black;
+    font-size:20pt;
+    font: sans-serif;
+    text-align: left;
+}
+
+::placeholder {
+  color: gray;
+  font-size:20pt;
+  font: sans-serif;
+  text-align: left;
+}
+
+
+
+
+
