@@ -1,1 +1,98 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emailing Notification System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <form action="http://localhost:3000/send_email" method="post">
+                <div class="step step-1 active">
+                    <label>Use Template? </label>
+                    <input type="radio" id="useTemplate" name="templateFlag" value="1">
+                        <label for="Notification">Yes | </label>
+                    <input type="radio" id="noTemplate" name="templateFlag" value="0">
+                        <label for="noTemplate">No</label>
+                    <br>
+                    <button type="button" class="newsletter-btn"> Newsletter </button>
+                    <button type="button" class="notification-btn"> Notification </button>
+                    <button type="button" class="request-btn"> Request </button>
+                    <button type="button" class="newform-btn"> New Form </button>
+                    <div class="form-group">
+                        <label for="to">To</label>
+                        <input type="email" id="to" name="to" placeholder="To: addressee" required><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="cc">Cc</label>
+                        <input type="email" id="cc" name="cc" placeholder="Cc: "><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="bcc">Bcc</label>
+                        <input type="email" id="bcc" name="bcc" placeholder="Bcc: "><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="Subject">Subject</label>
+                        <input type="text" id="subject" name="subject"  placeholder="Subject: " required><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="Body">Body</label><br>
+                        <textarea id="body" name="body"  placeholder="Body: " required></textarea><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="file">Attachment</label><br>
+                        <input type="file" name="upload" id="upload"><br><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="send">Send</label><br>
+                        <input type="submit" value="Send Email">
+                    </div>
+                </div>
+                <div class="step step-2">
+                    <div class="form-group">
+                        <label for="to">To</label>
+                        <input type="email" id="to" name="to" placeholder="To: addressee" required><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="cc">Cc</label>
+                        <input type="email" id="cc" name="cc" placeholder="Cc: "><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="bcc">Bcc</label>
+                        <input type="email" id="bcc" name="bcc" placeholder="Bcc: "><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="Subject">Subject</label>
+                        <input type="text" id="subject" name="subject"  placeholder="Subject: " required><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="Body">Body</label><br>
+                        <p>Hello [FirstName, LastName],</p>
+                        <p>Your [ApplicationTypeName] application status from [DateOfApplication] has been updated. Your application has been [ApplicationStatus].</p>
+                        <p>For more information, visit [ApplicationID].</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="file">Attachment</label><br>
+                        <input type="file" name="upload" id="upload"><br><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="send">Send</label><br>
+                        <input type="submit" value="Send Email">
+                    </div>
+                    <button type="button" class="home-btn"> Home </button>
+                </div>
+                <div class="step step-3">
+                    <div class="form-group">
+                        <label for="newsletter"> Newsletter </label>
+                    </div>
+                    <button type="button" class="home-btn"> Home </button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script src="form.js"></script>
+</body>
+</html>
