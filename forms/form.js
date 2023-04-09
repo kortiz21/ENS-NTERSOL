@@ -23,58 +23,62 @@ app.get("/", (req, res) => {
 app.post('/send_email', function(req, res) {
   // receive and store form data
   const templateFlag = req.body.templateFlag;
-  const emailType = req.body.notify || req.body.news || req.body.request;
+  const emailTemplate = req.body.templateOp;
   const to = req.body.to;
-  const cc = req.body.cc || '';
-  const bcc = req.body.bcc || '';
+  const ccWhom = req.body.cc || '';
+  const bccWhom = req.body.bcc || '';
   const subject = req.body.subject;
   const body = req.body.body;
   const file = req.file;
 
-  // instantiate nodemailer
-  let transporter = nodemailer.createTransport({
-    host: 'smtp-relay.sendinblue.com',
-    port: 587,
-    auth:
-    {
-      user: 'awagyusteak@gmail.com',
-      pass: 'wzk9tr1y5Iphm0xU'
-    }
-  });
 
-  // set email options
-  let mailOptions = {
-    from: 'awagyusteak@gmail.com', // Replace with your Gmail address
-    to: to,
-    cc: cc,
-    bcc: bcc,
-    subject: subject,
-    html: body
-  };
+    //use handlebars package to insert data to template
+    const handlebars = require('handlebars');
 
-  // attach file is provided
-  if (file)
+    //for fs
+    const fs = require('fs');
+
+    //set selected template file name
+    if (templateFlag == 'Notification')
     {
-        let fileContent = fs.readFileSync(file.path);
-        mailOptions.attachments = [{
-            filename: file.originalname,
-            content: fileContent
-        }];
+        fileName = '/templates/notification/template_notif.html';
     }
-    
-  // send email
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error)
+    else if (templateFlag == 'Newsletter')
     {
-      console.error(error);
-      res.status(500).send('Error sending email');
+        fileName = '/templates/newsletter/template_news.html';
+    }
+    else if (templateFlag == 'Request')
+    {
+        fileName = '/templates/request/template_request.html';
     }
     else
     {
-      console.log('Email sent: ' + info.response);
-      res.send('Email sent');
+        fileName = '/templates/template_basic.html';
     }
-  });
+    
+    const templateHTML = fs.readFileSync(fileName, 'utf8');
+
+    //put it all together
+    const templateUsed = handlebars.compile(templateHTML);
+
+    //what will go in the template
+    //this example uses the ffiields in the template_basic.html template
+    const data =
+    {
+        toWhom: to,
+        fromWhome:'me',
+        cc: ccWhom,
+        bcc: bccWhom,
+        bodyText: body,
+    }
+
+    //output HTML again
+    const outputHTML = templateUsed(data)
+
+    //push it, all done!
+    console.log(outputHTML)
+    res.send(outputHTML);
+
 });
 
 //listening
