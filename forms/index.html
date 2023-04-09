@@ -9,18 +9,16 @@
             <div class="ourForm">
                 <h1>Email Form</h1>
                 <form action="http://localhost:3000/send_email" method="post">
-                    <label>Use Template? </label>
-                    <input type="radio" id="useTemplate" name="templateFlag" value="1">
-                        <label for="Notification">Yes | </label>
-                    <input type="radio" id="noTemplate" name="templateFlag" value="0">
-                        <label for="noTemplate">No</label>
+                    <label>Which Template? </label>
                     <br>
-                    <input type="radio" id="Notification" name="notify" value="Notification">
+                    <input type="radio" id="templateFlag" name="templateFlag" value="Notification">
                         <label for="Notification">Notification | </label>
-                    <input type="radio" id="Newsletter" name="news" value="Newsletter">
+                    <input type="radio" id="templateFlag" name="templateFlag" value="Newsletter">
                         <label for="Newsletter">Newsletter | </label>
-                    <input type="radio" id="Request" name="request" value="Request">
+                    <input type="radio" id="templateFlag" name="templateFlag" value="Request">
                         <label for="Request">Request</label>
+                    <input type="radio" id="templateFlag" name="templateFlag" value="basic">
+                        <label for="Request">Basic</label>
 
                     <input type="email" id="to" name="to" placeholder="To: addressee" required><br><br>
 
@@ -29,7 +27,7 @@
                     <input type="email" id="bcc" name="bcc" placeholder="BCC: "><br><br>
 
                     <input type="text" id="subject" name="subject"  placeholder="Subject: " required><br><br>
-
+                    
                     <textarea id="body" name="body"  placeholder="Body: " required></textarea><br><br>
                     
                     <input type="file" name="upload" id="upload"><br><br>
