@@ -1,0 +1,117 @@
+.header {
+    text-align: left;
+    background: #2b00ff;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header h1 {
+    font-size: 20px;
+}
+
+.application {
+    padding: 80px;
+    text-align: center;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.application h1,
+h2,
+h3 {
+    font-size: 40px;
+}
+
+.application p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #1600a1;
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 9999;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav a {
+    color: #ff7b00;
+    margin-right: 40px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+nav a:hover {
+    color: #0400ff;
+}
+
+button.other-job-btn {
+    float: center;
+    margin-top: 20px;
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    background-color: rgb(55, 0, 255);
+    color: #fff;
+    font-family: "Montserrat";
+    font-size: 18px;
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    margin: auto;
+    width: 100%;
+}
+
+.body {
+    padding: 80px;
+    text-align: center;
+    background: #4000ff;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+}
+
+.body h1 {
+    text-align: center;
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+}
+
+.body p {
+    text-align: center;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.footer {
+    padding: 80px;
+    text-align: center;
+    background: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+}
+
+.footer h1 {
+    text-align: center;
+    font-size: 40px;
+    color: rgb(60, 0, 255);
+}
+
+.footer p {
+    text-align: center;
+    font-size: 20px;
+    color: #ff7b00;
+}
