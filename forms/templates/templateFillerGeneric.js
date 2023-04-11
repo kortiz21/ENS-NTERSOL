@@ -17,7 +17,15 @@ const data =
     fromWhome:'test',
     cc: ccWhom,
     bcc: bccWhom,
+    //newsletter vars
+    profile: profilePic,
+    title: emailTitle,
+    subTitle: emailSub,
     bodyText: body,
+    bodyText1: body1,
+    bodyText2: body2,
+    bodyText3: body3,
+    bodyText4: body4
 }
 
 //output HTML again
