@@ -24,13 +24,13 @@ app.post('/send_email', function(req, res) {
   // receive and store form data
   const templateFlag = req.body.templateFlag;
   const emailTemplate = req.body.templateOp;
+  const fromPerson = req.body.fromE;
   const to = req.body.to;
   const ccWhom = req.body.cc || '';
   const bccWhom = req.body.bcc || '';
   const subject = req.body.subject;
   const body = req.body.body;
   const file = req.file;
-
 
     //use handlebars package to insert data to template
     const handlebars = require('handlebars');
@@ -41,19 +41,19 @@ app.post('/send_email', function(req, res) {
     //set selected template file name
     if (templateFlag == 'Notification')
     {
-        fileName = '/templates/notification/template_notif.html';
+        fileName = '/Users/austinfp/Downloads/ENS-NTERSOL-main/forms/templates/notifcation/template_notifcation.html';
     }
     else if (templateFlag == 'Newsletter')
     {
-        fileName = '/templates/newsletter/template_news.html';
+        fileName = '/Users/austinfp/Downloads/ENS-NTERSOL-main/forms/templates/newsletter/template_news.html';
     }
     else if (templateFlag == 'Request')
     {
-        fileName = '/templates/request/template_request.html';
+        fileName = 'templates/request/template_request.html';
     }
     else
     {
-        fileName = '/templates/template_basic.html';
+        fileName = '/Users/austinfp/Downloads/ENS-NTERSOL-main/forms/templates/template_basic.html';
     }
     
     const templateHTML = fs.readFileSync(fileName, 'utf8');
@@ -66,10 +66,20 @@ app.post('/send_email', function(req, res) {
     const data =
     {
         toWhom: to,
-        fromWhome:'me',
+        fromWhome: fromPerson,
         cc: ccWhom,
         bcc: bccWhom,
         bodyText: body,
+        
+        //for dylan
+        profile: 'https://images.fineartamerica.com/images-medium-large-5/6-snowflake-kenneth-libbrechtscience-photo-library.jpg',
+        title: to,
+        subTitle: fromPerson,
+        bodyText: body,
+        bodyText1: body,
+        bodyText2: body,
+        bodyText3: body,
+        bodyText4: body,
     }
 
     //output HTML again
