@@ -3,6 +3,15 @@ body
     background-color: aquamarine;
 }
 
+select
+{
+    width: 98%;
+    padding: 12px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    transition: width 0.4s ease-in-out;
+}
+
 input[type=text]
 {
     width: 98%;
@@ -32,6 +41,15 @@ input[type=file]
     font-size:20pt;
     font: sans-serif;
     text-align: right;
+}
+
+input[type=date]
+{
+    width: 98%;
+    padding: 12px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    transition: width 0.4s ease-in-out;
 }
 
 input[type=submit]
