@@ -139,11 +139,17 @@
         <div class="header">
         </div>
         <div class="application">
-            <h1>Thank you %email_addr_first%</h1>
+            <h1>Thank you, {{fname}}</h1>
             <h2>We received your application</h2>
-            <p>We will keep you posted on next steps!</p>
-            <p>Don't call us, we'll call you.</p>
-            <p>Check out our other job openings below.</p>
+            
+            <p>Hello {{fname}} {{lname}},</p>
+            <p>Thank you for your {{appType}} application submission on {{subDate}}.</p>
+            <p>Your application {{appStatus}}. We will contact you whenever there is a change to your application status. To view up-to-date information, see applicatinn {{appID}}.</p>
+             <br>
+             <p>We will keep you posted on next steps!</p>
+             <p>Don't call us, we'll call you.</p>
+             <p>Check out our job openings below.</p>
+            
             <button type="button" class="other-job-btn"> Other Job Openings </button>
         </div>
         <div class="image">
