@@ -29,8 +29,48 @@
                     <input type="email" id="bcc" name="bcc" placeholder="BCC: "><br><br>
 
                     <input type="text" id="subject" name="subject"  placeholder="Subject: " required><br><br>
-                    
+                        
                     <textarea id="body" name="body"  placeholder="Body: " required></textarea><br><br>
+                    
+                    <!--Notification form-->
+                    <h2>Notification (optional section)</h2>
+                    <input type="text" id="fname" name="fname" placeholder="Receiver's First Name"><br><br>
+                    <input type="text" id="lname" name="lname" placeholder="Receiver's Last Name"><br><br>
+                    <select name="appType" id="appType">
+                        <option disabled selected hidden>Choose Application Type<option>
+                        <option value="Job">Job</option>
+                        <option value="Change Request">Change Request</option>
+                        <option value="Remove Request">Remove Request</option>
+                        <option value="Add Request">Add Request</option>
+                    </select><br><br>
+                    <input type="text" placeholder="Choose Date of Application" onfocus="(this.type='date')"><br><br>
+                    <select name="appStatus" id="appStatus" placeholder="Status of Application">
+                        <option disabled selected hidden>Choose Application Status<option>
+                        <option value="was received">Received</option>
+                        <option value="is currently pending">Pending</option>
+                        <option value="was approved">Approved</option>
+                        <option value="is currently on hold">On hold</option>
+                    </select><br><br>
+                    
+                    <!--END Notification form-->
+                    
+                    
+                    <!--Newsletter form-->
+                    <h2>Newsletter (optional section)</h2>
+                    <input type="text" id="title" name="title" placeholder="Newsletter Title"><br><br>
+                    <input type="text" id="subtitle" name="subtitle" placeholder="Subtitle"><br><br>
+                    <textarea id="body1" name="body1"  placeholder="Additional Body section"></textarea><br><br>
+                    <textarea id="body2" name="body2"  placeholder="Additional Body section"></textarea><br><br>
+                    <textarea id="body3" name="body3"  placeholder="Additional Body section"></textarea><br><br>
+                    <textarea id="body4" name="body4"  placeholder="Additional Body section"></textarea><br><br>
+                    <!--END Newsletter form-->
+                    
+                    
+                    <!--Request form-->
+                    
+                    <!--END Request form-->
+                    
+                    
                     
                     <input type="file" name="upload" id="upload"><br><br>
                     <input type="submit" value="Send Email">
