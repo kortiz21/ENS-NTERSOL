@@ -22,6 +22,8 @@ app.get("/", (req, res) => {
 
 app.post('/send_email', function(req, res) {
   // receive and store form data
+    
+  // basic email
   const templateFlag = req.body.templateFlag;
   const emailTemplate = req.body.templateOp;
   const fromPerson = req.body.fromE;
@@ -31,6 +33,22 @@ app.post('/send_email', function(req, res) {
   const subject = req.body.subject;
   const body = req.body.body;
   const file = req.file;
+    
+  //for notificatioin
+  const fname = req.body.fname || '';
+  const lname = req.body.lname || '';
+  const appType = req.body.appType || '';
+  const appID = req.body.appID || '';
+  const subDate = req.body.subDate || '';
+  const appStatus = req.body.appStatus || '';
+    
+  //for newsletter
+  const title = req.body.title || '';
+  const subtitle = req.body.subtitle || '';
+  const body1 = req.body.body1 || '';
+  const body2 = req.body.body2 || '';
+  const body3 = req.body.body3 || '';
+  const body4 = req.body.body4 || '';
 
     //use handlebars package to insert data to template
     const handlebars = require('handlebars');
@@ -41,11 +59,11 @@ app.post('/send_email', function(req, res) {
     //set selected template file name
     if (templateFlag == 'Notification')
     {
-        fileName = '/Users/austinfp/Downloads/ENS-NTERSOL-main/forms/templates/notifcation/template_notifcation.html';
+        fileName = '/Users/austinfp/Downloads/ENS-NTERSOL-main/forms_test/templates/notifcation/template_notifcation.html';
     }
     else if (templateFlag == 'Newsletter')
     {
-        fileName = '/Users/austinfp/Downloads/ENS-NTERSOL-main/forms/templates/newsletter/template_news.html';
+        fileName = '/Users/austinfp/Downloads/ENS-NTERSOL-main/forms_test/templates/newsletter/template_news.html';
     }
     else if (templateFlag == 'Request')
     {
@@ -53,7 +71,7 @@ app.post('/send_email', function(req, res) {
     }
     else
     {
-        fileName = '/Users/austinfp/Downloads/ENS-NTERSOL-main/forms/templates/template_basic.html';
+        fileName = '/Users/austinfp/Downloads/ENS-NTERSOL-main/forms_test/templates/template_basic.html';
     }
     
     const templateHTML = fs.readFileSync(fileName, 'utf8');
@@ -65,21 +83,30 @@ app.post('/send_email', function(req, res) {
     //this example uses the ffiields in the template_basic.html template
     const data =
     {
+        //for basic
         toWhom: to,
         fromWhome: fromPerson,
         cc: ccWhom,
         bcc: bccWhom,
         bodyText: body,
         
-        //for dylan
+        //for notificatioin
+        fname: fname,
+        lname: lname,
+        appType: appType,
+        appID: appID,
+        subDate: subDate,
+        appStatus: appStatus,
+        
+        //for newsletter
         profile: 'https://images.fineartamerica.com/images-medium-large-5/6-snowflake-kenneth-libbrechtscience-photo-library.jpg',
-        title: to,
-        subTitle: fromPerson,
+        title: title,
+        subTitle: subtitle,
         bodyText: body,
-        bodyText1: body,
-        bodyText2: body,
-        bodyText3: body,
-        bodyText4: body,
+        bodyText1: body1,
+        bodyText2: body2,
+        bodyText3: body3,
+        bodyText4: body4,
     }
 
     //output HTML again
