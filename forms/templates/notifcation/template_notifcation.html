@@ -6,6 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notification</title>
     <link rel="shortcut icon" href="Ntersol_logo.png">
+    <!-- link script.js -->
+    <script>
+        // get the link elements by id
+        const homeLink = document.getElementById("home");
+        const formsLink = document.getElementById("forms");
+        const emailLink = document.getElementById("email");
+        const accountLink = document.getElementById("account");
+
+        // add click event listeners to each link
+        homeLink.addEventListener("click", function () {
+            window.location.href = "home.html";
+        });
+
+        formsLink.addEventListener("click", function () {
+            window.location.href = "forms.html";
+        });
+
+        emailLink.addEventListener("click", function () {
+            window.location.href = "email.html";
+        });
+
+        accountLink.addEventListener("click", function () {
+            window.location.href = "account.html";
+        }); 
+    </script>
     <style>
         .header {
             text-align: left;
@@ -41,7 +66,7 @@
         }
 
         nav {
-            background-color: #333;
+            background-color: black;
             position: fixed;
             top: 0;
             left: 0;
@@ -63,6 +88,7 @@
         }
 
         nav a:hover {
+            background-color: #ff7b00;
             color: #0400ff;
         }
 
@@ -131,25 +157,26 @@
     <section>
         <nav>
             <a href="#">NTERSOL</a>
-            <a href="#">About Us</a>
-            <a href="#">Jobs</a>
-            <a href="#">Why Ntersol</a>
-            <a href="#">Register</a>
+            <a href="#">Home</a>
+            <a href="#">Forms</a>
+            <a href="#">Email Log</a>
+            <a href="#">Account</a>
         </nav>
         <div class="header">
         </div>
         <div class="application">
             <h1>Thank you, {{fname}}</h1>
             <h2>We received your application</h2>
-            
+
             <p>Hello {{fname}} {{lname}},</p>
             <p>Thank you for your {{appType}} application submission on {{subDate}}.</p>
-            <p>Your application {{appStatus}}. We will contact you whenever there is a change to your application status. To view up-to-date information, see applicatinn {{appID}}.</p>
-             <br>
-             <p>We will keep you posted on next steps!</p>
-             <p>Don't call us, we'll call you.</p>
-             <p>Check out our job openings below.</p>
-            
+            <p>Your application {{appStatus}}. We will contact you whenever there is a change to your application
+                status. To view up-to-date information, see applicatinn {{appID}}.</p>
+            <br>
+            <p>We will keep you posted on next steps!</p>
+            <p>Don't call us, we'll call you.</p>
+            <p>Check out our job openings below.</p>
+
             <button type="button" class="other-job-btn"> Other Job Openings </button>
         </div>
         <div class="image">
