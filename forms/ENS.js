@@ -15,10 +15,23 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //for css styling
 app.use(express.static(__dirname))
 
+//For loading pages
 //home page
 app.get("/", (req, res) => {
         res.sendFile(__dirname + "/index.html");
 });
+
+//email form page page
+app.get("/email", (req, res) => {
+        res.sendFile(__dirname + "/email.html");
+});
+
+//logged email view
+app.get("/logs", (req, res) => {
+        res.sendFile(__dirname + "/logs.html");
+});
+
+///////////////
 
 app.post('/send_email', function(req, res) {
   // receive and store form data
