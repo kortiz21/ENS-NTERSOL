@@ -130,6 +130,45 @@ label
 }
 
 
+/* For showing and hiding fields*/
 
+.hiddenFields{
+    display:none;
+}
 
+#showNoti{
+    width: 100%;
+    background-color: #ff7b00;
+    /* style the font */
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+#showNews{
+    width: 100%;
+    background-color: #ff7b00;
+    /* style the font */
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+#showReq{
+    width: 100%;
+    background-color: #ff7b00;
+    /* style the font */
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+#showBasic{
+    width: 100%;
+    background-color: #ff7b00;
+    /* style the font */
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
 
