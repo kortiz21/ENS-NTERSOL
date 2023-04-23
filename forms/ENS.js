@@ -72,19 +72,19 @@ app.post('/send_email', function(req, res) {
     //set selected template file name
     if (templateFlag == 'Notification')
     {
-        fileName = '/Users/austinfp/Downloads/ENS-NTERSOL-main/forms_test/templates/notifcation/template_notifcation.html';
+        fileName = __dirname + '/templates/notification/template_notification.html';
     }
     else if (templateFlag == 'Newsletter')
     {
-        fileName = '/Users/austinfp/Downloads/ENS-NTERSOL-main/forms_test/templates/newsletter/template_news.html';
+        fileName = __dirname + '/templates/newsletter/template_news.html';
     }
     else if (templateFlag == 'Request')
     {
-        fileName = 'templates/request/template_request.html';
+        fileName = __dirname + '/templates/request/template_request.html';
     }
     else
     {
-        fileName = '/Users/austinfp/Downloads/ENS-NTERSOL-main/forms_test/templates/template_basic.html';
+        fileName = __dirname + '/templates/template_basic.html';
     }
     
     const templateHTML = fs.readFileSync(fileName, 'utf8');
