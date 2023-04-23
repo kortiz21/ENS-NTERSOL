@@ -4,4 +4,7 @@ $(document).ready(function(){
         $("div.hiddenFields").hide();
         $("#show"+demovalue).show();
     });
+    $('input[type="reset"]').click(function(){
+        $("div.hiddenFields").hide();
+    });
 });
