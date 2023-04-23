@@ -124,11 +124,45 @@ app.post('/send_email', function(req, res) {
 
     //output HTML again
     const outputHTML = templateUsed(data)
+    
+    //for sending email
+    
+    // instantiate nodemailer
+     let transporter = nodemailer.createTransport({
+       host: 'smtp-relay.sendinblue.com',
+       port: 587,
+       auth:
+       {
+         user: 'awagyusteak@gmail.com',
+         pass: 'wzk9tr1y5Iphm0xU'
+       }
+     });
+
+    // set email options
+    let mailOptions = {
+      from: 'awagyusteak@gmail.com',
+      to: to,
+      cc: ccWhom,
+      bcc: bccWhom,
+      subject: subject,
+      text: body,
+      html: outputHTML // replace with outputHTML
+    };
+
+    // send email
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email sent: ' + info.response);
+      }
+    });
+    
+    ////////END SENDING EMAIL/////////
 
     //push it, all done!
-    console.log(outputHTML)
     res.send(outputHTML);
-
+    console.log(outputHTML) */
 });
 
 //listening
