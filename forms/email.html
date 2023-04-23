@@ -7,6 +7,9 @@
     <!-- link styles.css -->
     <link rel="stylesheet" href="stylesheets/main_styles.css">
     <link rel="stylesheet" href="stylesheets/email_styles.css">
+    <!-- link to JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/formDisplay.js"></script>
     <!-- link shortcut icon-->
     <link rel="shortcut icon" href="Ntersol_logo.png">
     <title>Emailing Notification System</title>
@@ -28,15 +31,15 @@
             <form action="http://localhost:3000/send_email" method="post">
                 <label>Which Template? </label>
                 <br>
-                <input type="radio" id="templateFlag" name="templateFlag" value="Notification">
+                <input type="radio" id="templateFlag" name="templateFlag" value="Noti">
                     <label for="Notification">Notification | </label>
-                <input type="radio" id="templateFlag" name="templateFlag" value="Newsletter">
+                <input type="radio" id="templateFlag" name="templateFlag" value="News">
                     <label for="Newsletter">Newsletter | </label>
-                <input type="radio" id="templateFlag" name="templateFlag" value="Request">
+                <input type="radio" id="templateFlag" name="templateFlag" value="Req">
                     <label for="Request">Request</label>
-                <input type="radio" id="templateFlag" name="templateFlag" value="basic">
+                <input type="radio" id="templateFlag" name="templateFlag" value="Basic">
                     <label for="Request">Basic</label>
-
+                    
                 <input type="email" id="fromE" name="fromE" placeholder="From: addresser" required><br><br>
                     
                 <input type="email" id="to" name="to" placeholder="To: addressee" required><br><br>
@@ -46,10 +49,9 @@
                 <input type="email" id="bcc" name="bcc" placeholder="BCC: "><br><br>
 
                 <input type="text" id="subject" name="subject"  placeholder="Subject: " required><br><br>
-                    
-                <textarea id="body" name="body"  placeholder="Body (fill in if you did not choose a template): "></textarea><br><br>
                 
                 <!--Notification form-->
+                <div id="showNoti" class="hiddenFields">
                 <h2>Notification (optional section)</h2>
                 <input type="text" id="fname" name="fname" placeholder="Receiver's First Name"><br><br>
                 <input type="text" id="lname" name="lname" placeholder="Receiver's Last Name"><br><br>
@@ -67,12 +69,14 @@
                     <option value="is currently pending">Pending</option>
                     <option value="was approved">Approved</option>
                     <option value="is currently on hold">On hold</option>
-                </select><br><br>
+                </select>
+                </div>
                 
                 <!--END Notification form-->
                 
                 
                 <!--Newsletter form-->
+                <div id="showNews" class="hiddenFields">
                 <h2>Newsletter (optional section)</h2>
                 <input type="text" id="title" name="title" placeholder="Newsletter Title"><br><br>
                 <input type="text" id="subtitle" name="subtitle" placeholder="Subtitle"><br><br>
@@ -80,22 +84,29 @@
                 <textarea id="body2" name="body2"  placeholder="Additional Body section"></textarea><br><br>
                 <textarea id="body3" name="body3"  placeholder="Additional Body section"></textarea><br><br>
                 <textarea id="body4" name="body4"  placeholder="Additional Body section"></textarea><br><br>
+                </div>
                 <!--END Newsletter form-->
                 
                 
                 <!--Request form-->
-                
+                <div id="showReq" class="hiddenFields">
+                    Hi
+                </div>
                 <!--END Request form-->
                 
-                
-                
-                <input type="file" name="upload" id="upload"><br><br>
+                <!--Basic-->
+                <div id="showBasic" class="hiddenFields">
+                <textarea id="body" name="body"  placeholder="Body (fill in if you did not choose a template): "></textarea><br><br>
+                <input type="file" name="upload" id="upload">
+                </div>
+                <!--END Basic-->
+                <br><br>
                 <input type="submit" value="Send Email">
             </form>
         </div>
     </section>
     <!-- main Section -->
-    <section ckass="main">
+    <section class="main">
 
     </section>
 </body>
