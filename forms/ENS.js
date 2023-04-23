@@ -70,19 +70,19 @@ app.post('/send_email', function(req, res) {
     const fs = require('fs');
 
     //set selected template file name
-    if (templateFlag == 'Notification')
+    if (templateFlag == 'Noti')
     {
         fileName = __dirname + '/templates/notification/template_notification.html';
     }
-    else if (templateFlag == 'Newsletter')
+    else if (templateFlag == 'News')
     {
         fileName = __dirname + '/templates/newsletter/template_news.html';
     }
-    else if (templateFlag == 'Request')
+    else if (templateFlag == 'Req')
     {
         fileName = __dirname + '/templates/request/template_request.html';
     }
-    else
+    else if  (templateFlag == 'Basic')
     {
         fileName = __dirname + '/templates/template_basic.html';
     }
