@@ -39,7 +39,7 @@ nav a:hover {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -30%);
+    transform: translate(-50%, -50%);
     /* style the font */
     color: white;
     text-align: center;
@@ -47,6 +47,7 @@ nav a:hover {
     /* border */
     border: 2px solid black;
 }
+
 /* body section */
 body {
     /*display: block;
