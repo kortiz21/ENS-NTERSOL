@@ -31,15 +31,15 @@
             <form action="http://localhost:3000/send_email" method="post">
                 <label>Which Template? </label>
                 <br>
-                <input type="radio" id="templateFlag" name="templateFlag" value="Noti">
-                    <label for="Notification">Notification | </label>
-                <input type="radio" id="templateFlag" name="templateFlag" value="News">
-                    <label for="Newsletter">Newsletter | </label>
-                <input type="radio" id="templateFlag" name="templateFlag" value="Req">
-                    <label for="Request">Request</label>
-                <input type="radio" id="templateFlag" name="templateFlag" value="Basic">
-                    <label for="Request">Basic</label>
-                    
+                <input type="radio" id="Noti" name="templateFlag" value="Noti">
+                    <label for="Noti">Notification | </label></input>
+                <input type="radio" id="News" name="templateFlag" value="News">
+                    <label for="News">Newsletter | </label>
+                <input type="radio" id="Req" name="templateFlag" value="Req">
+                    <label for="Req">Request</label>
+                <input type="radio" id="Basic" name="templateFlag" value="Basic">
+                    <label for="Basic">Basic</label>
+                <br><br>
                 <input type="email" id="fromE" name="fromE" placeholder="From: addresser" required><br><br>
                     
                 <input type="email" id="to" name="to" placeholder="To: addressee" required><br><br>
@@ -48,7 +48,7 @@
 
                 <input type="email" id="bcc" name="bcc" placeholder="BCC: "><br><br>
 
-                <input type="text" id="subject" name="subject"  placeholder="Subject: " required><br><br>
+                <input type="text" id="subject" name="subject" placeholder="Subject: " required><br><br>
                 
                 <!--Notification form-->
                 <div id="showNoti" class="hiddenFields">
@@ -83,7 +83,7 @@
                 <textarea id="body1" name="body1"  placeholder="Additional Body section"></textarea><br><br>
                 <textarea id="body2" name="body2"  placeholder="Additional Body section"></textarea><br><br>
                 <textarea id="body3" name="body3"  placeholder="Additional Body section"></textarea><br><br>
-                <textarea id="body4" name="body4"  placeholder="Additional Body section"></textarea><br><br>
+                <textarea id="body4" name="body4"  placeholder="Additional Body section"></textarea>
                 </div>
                 <!--END Newsletter form-->
                 
@@ -100,7 +100,7 @@
                 <input type="file" name="upload" id="upload">
                 </div>
                 <!--END Basic-->
-                <br><br>
+
                 <input type="submit" value="Send Email">
                 <input type="reset" value="Reset Form">
             </form>
