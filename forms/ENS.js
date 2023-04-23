@@ -162,7 +162,7 @@ app.post('/send_email', function(req, res) {
 
     //push it, all done!
     res.send(outputHTML);
-    console.log(outputHTML) */
+    console.log(outputHTML)
 });
 
 //listening
