@@ -39,7 +39,6 @@ app.post('/send_email', function(req, res) {
   // basic email
   const templateFlag = req.body.templateFlag;
   const emailTemplate = req.body.templateOp;
-  const fromPerson = req.body.fromE;
   const to = req.body.to;
   const ccWhom = req.body.cc || '';
   const bccWhom = req.body.bcc || '';
@@ -47,7 +46,7 @@ app.post('/send_email', function(req, res) {
   const body = req.body.body;
   const file = req.file;
     
-  //for notificatioin
+  //for notification
   const fname = req.body.fname || '';
   const lname = req.body.lname || '';
   const appType = req.body.appType || '';
@@ -62,7 +61,7 @@ app.post('/send_email', function(req, res) {
   const body2 = req.body.body2 || '';
   const body3 = req.body.body3 || '';
   const body4 = req.body.body4 || '';
-
+    
     //use handlebars package to insert data to template
     const handlebars = require('handlebars');
 
@@ -73,10 +72,37 @@ app.post('/send_email', function(req, res) {
     if (templateFlag == 'Noti')
     {
         fileName = __dirname + '/templates/notification/template_notification.html';
+        var jsonData = {
+            email: {
+            to: to,
+            cc: ccWhom,
+            bcc: bccWhom,
+            subject: subject,
+            template: templateFlag,
+            },
+            notification: {
+            appID: appID,
+            submissionDate: subDate,
+            appStatus: appStatus;
+            }
+        }
     }
     else if (templateFlag == 'News')
     {
         fileName = __dirname + '/templates/newsletter/template_news.html';
+        var jsonData = {
+            email: {
+            to: to,
+            cc: ccWhom,
+            bcc: bccWhom,
+            subject: subject,
+            template: templateFlag,
+            },
+            newsletter: {
+            title: title,
+            subtitle: subtitle,
+            }
+        }
     }
     else if (templateFlag == 'Req')
     {
@@ -85,11 +111,33 @@ app.post('/send_email', function(req, res) {
     else if  (templateFlag == 'Basic')
     {
         fileName = __dirname + '/templates/template_basic.html';
+        var jsonData = {
+            email: {
+            to: to,
+            cc: ccWhom,
+            bcc: bccWhom,
+            subject: subject,
+            template: emailTemplate,
+            },
+        }
     }
+    
+    ////write to JSON
+    const dataToJson = JSON.stringify(jsonData, null, 2);
+
+    // Write data to 'outputJson.txt' .
+    fs.writeFile('./outputJson.txt', dataToJson, (err) => {
+      if (err) {
+        console.error(err);
+      } else {
+        console.log(dataToJson);
+      }
+    });
+    //// END write to JSON
     
     const templateHTML = fs.readFileSync(fileName, 'utf8');
 
-    //put it all together
+    //put it all together and load template
     const templateUsed = handlebars.compile(templateHTML);
 
     //what will go in the template
@@ -98,7 +146,6 @@ app.post('/send_email', function(req, res) {
     {
         //for basic
         toWhom: to,
-        fromWhome: fromPerson,
         cc: ccWhom,
         bcc: bccWhom,
         bodyText: body,
@@ -164,6 +211,8 @@ app.post('/send_email', function(req, res) {
 
     //push it, all done!
 });
+
+
 
 //listening
 app.listen(3000, () => {
