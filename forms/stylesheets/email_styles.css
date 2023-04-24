@@ -55,7 +55,7 @@ input[type=submit],input[type=reset]
     box-sizing: border-box;
     transition: width 0.4s ease-in-out;
     color: gray;
-    font-size:20pt;
+    font-size:12pt;
     font: sans-serif;
     text-align: right;
 }
@@ -86,12 +86,6 @@ textarea:focus
     height: 100pt;
 }
 
-div
-{
-    vertical-align: center;
-    width: 30%;
-}
-
 .formInside
 {
     position: absolute;
@@ -106,25 +100,17 @@ div
     width: 500pt;
 }
 
-h1
-{
-    color: black;
-    font-size:30pt;
-    font: sans-serif;
-    text-align: left;
-}
-
 label
 {
     color: black;
-    font-size:20pt;
+    font-size:12pt;
     font: sans-serif;
     text-align: left;
 }
 
 ::placeholder {
   color: gray;
-  font-size:20pt;
+  font-size:12pt;
   font: sans-serif;
   text-align: left;
 }
