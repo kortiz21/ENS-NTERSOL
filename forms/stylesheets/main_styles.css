@@ -36,14 +36,14 @@ nav a:hover {
     background-color: #ff7b00;
     padding: 20px;
     /* center the text */
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -35%);
     /* style the font */
     color: white;
     text-align: center;
-    font-size: 30px;
+    font-size: 15px;
     /* border */
     border: 2px solid black;
 }
@@ -53,10 +53,46 @@ body {
     /*display: block;
     margin: 0px;*/
     font-family: Arial, sans-serif;
-    background-image: url("/images/landing.jpg");
+    background-image: url("../images/landing.jpg");
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+div
+{
+    vertical-align: center;
+    width: 30%;
+}
+
+.formInside
+{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ourForm
+{
+    height: 500pt;
+    width: 500pt;
+}
+
+h1
+{
+    color: black;
+    font-size:30pt;
+    font: sans-serif;
+    text-align: center;
+}
+
+h2
+{
+    color: black;
+    font-size:20pt;
+    font: sans-serif;
+    text-align: center;
 }
