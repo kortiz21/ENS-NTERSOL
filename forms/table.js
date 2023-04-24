@@ -1,4 +1,3 @@
-
 var table = document.createElement('table');
 var tr = document.createElement('tr');
 var arrheader = ['ID', 'From', 'To', 'Subject', 'Email Body'];
@@ -47,4 +46,6 @@ for (var i = 0; i < array.length; i++) {
     table.appendChild(tr);
 }
 table.setAttribute("border", "inset");
-document.body.appendChild(table);
+
+var tableDiv = document.getElementById("tableHere");
+tableDiv.appendChild(table);
