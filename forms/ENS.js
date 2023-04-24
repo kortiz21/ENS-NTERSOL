@@ -107,6 +107,15 @@ app.post('/send_email', function(req, res) {
     else if (templateFlag == 'Req')
     {
         fileName = __dirname + '/templates/request/template_request.html';
+        var jsonData = {
+            email: {
+            to: to,
+            cc: ccWhom,
+            bcc: bccWhom,
+            subject: subject,
+            template: emailTemplate,
+            },
+        }
     }
     else if  (templateFlag == 'Basic')
     {
