@@ -96,3 +96,26 @@ h2
     font: sans-serif;
     text-align: center;
 }
+
+table {
+  font-family: sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #000000;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: grey;}
+
+tr:hover {background-color: lightblue;}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: maroon;
+  color: white;
+}
