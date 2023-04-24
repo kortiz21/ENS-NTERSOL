@@ -1,7 +1,7 @@
 
 var table = document.createElement('table');
 var tr = document.createElement('tr');
-var arrheader = ['ID', 'From', 'To', 'Subject', 'emailBody'];
+var arrheader = ['ID', 'From', 'To', 'Subject', 'Email Body'];
 var array = [{
     ID: emailID,
     From: sender,
