@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="stylesheets/main_styles.css">
     <!-- link shortcut icon-->
     <link rel="shortcut icon" href="Ntersol_logo.png">
-    <!-- link script.js -->
-    <script src="script.js"></script>
+    <!-- link js -->
+   
     <title>Email Logs</title>
 </head>
 
@@ -24,25 +24,26 @@
     </nav>
     <!-- landing section-->
     <section class="landing" id="landing">
-        <div class="welcome">
+        <div class="welcome" id="tableHere">
             <h2>Logged Email Content</h2>
-        </div>
-        <script>
-            var emailID = 0; 
-            var sender = 'a'; 
-            var receiver = 'b'; 
-            var subject = 'c';
-            var body = 'd';
-        </script>
-        
-        <script src="table.js"></script>
-
-    </section>
-    <!-- main Section -->
-    <section class="main">
-        <label for=emailID>Email ID:</label>
-        <input type="number" id="emailNum" min="0" step="1" value="0">
-        <input type="submit" value="submit">
+            
+            <script>
+                var emailID = 0;
+                var sender = 'a';
+                var receiver = 'b';
+                var subject = 'c';
+                var body = 'd';
+            </script>
+            <script src="js/table.js"></script>
+            <!-- main Section -->
+            <section class="main">
+                <div id="myTable">
+                </div>
+                <label for=emailID>Email ID:</label>
+                <input type="number" id="emailNum" min="0" step="1" value="0">
+                    <input type="submit" value="submit">
+                    </div>
+            </section>
     </section>
 </body>
 
