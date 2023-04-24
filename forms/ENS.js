@@ -126,7 +126,7 @@ app.post('/send_email', function(req, res) {
     const dataToJson = JSON.stringify(jsonData, null, 2);
 
     // Write data to 'outputJson.txt' .
-    fs.writeFile('./outputJson.txt', dataToJson, (err) => {
+    fs.writeFile('./outputJson.JSON', dataToJson, (err) => {
       if (err) {
         console.error(err);
       } else {
