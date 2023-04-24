@@ -152,8 +152,10 @@ app.post('/send_email', function(req, res) {
     // send email
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
+        res.sendFile(__dirname + "/email_sent/failed.html");
         console.log(error);
       } else {
+        res.sendFile(__dirname + "/email_sent/confirmation.html");
         console.log('Email sent: ' + info.response);
       }
     });
@@ -161,8 +163,6 @@ app.post('/send_email', function(req, res) {
     ////////END SENDING EMAIL/////////
 
     //push it, all done!
-    res.send(outputHTML);
-    console.log(outputHTML)
 });
 
 //listening
