@@ -83,7 +83,7 @@ app.post('/send_email', function(req, res) {
             notification: {
             appID: appID,
             submissionDate: subDate,
-            appStatus: appStatus;
+            appStatus: appStatus,
             }
         }
     }
