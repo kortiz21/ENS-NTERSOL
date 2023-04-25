@@ -77,12 +77,19 @@ app.post('/send_email', function(req, res) {
   const body3 = req.body.body3 || '';
   const body4 = req.body.body4 || '';
     
+  //for request
+  //nothing special
+    const requestCode = Math.floor(Math.random() * 1000000);
+    ourCode = requestCode.toString().padStart(6, '0');
+    
     //use handlebars package to insert data to template
     const handlebars = require('handlebars');
 
     //for fs
     const fs = require('fs');
-
+    
+    const now = new Date();
+    
     //set selected template file name
     if (templateFlag == 'Noti')
     {
@@ -96,7 +103,7 @@ app.post('/send_email', function(req, res) {
             template: templateFlag,
             },
             notification: {
-            appID: appID,
+            appID: ourCode,
             submissionDate: subDate,
             appStatus: appStatus,
             }
@@ -150,7 +157,7 @@ app.post('/send_email', function(req, res) {
     const dataToJson = JSON.stringify(jsonData, null, 2);
 
     // Write data to 'outputJson.txt' .
-    fs.writeFile('./outputJson.JSON', dataToJson, (err) => {
+    fs.writeFile('outputJson.JSON', dataToJson, (err) => {
       if (err) {
         console.error(err);
       } else {
@@ -174,11 +181,11 @@ app.post('/send_email', function(req, res) {
         bcc: bccWhom,
         bodyText: body,
         
-        //for notificatioin
+        //for notification
         fname: fname,
         lname: lname,
         appType: appType,
-        appID: appID,
+        appID: ourCode,
         subDate: subDate,
         appStatus: appStatus,
         
@@ -191,6 +198,9 @@ app.post('/send_email', function(req, res) {
         bodyText2: body2,
         bodyText3: body3,
         bodyText4: body4,
+        
+        //for request
+        randomCode: ourCode,
     }
 
     //output HTML again
