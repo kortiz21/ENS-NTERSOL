@@ -36,7 +36,7 @@
                 <input type="radio" id="News" name="templateFlag" value="News">
                     <label for="News">Newsletter | </label>
                 <input type="radio" id="Req" name="templateFlag" value="Req">
-                    <label for="Req">Request</label>
+                    <label for="Req">Code</label>
                 <input type="radio" id="Basic" name="templateFlag" value="Basic">
                     <label for="Basic">Basic</label>
                 <br><br>
@@ -51,7 +51,7 @@
                 
                 <!--Notification form-->
                 <div id="showNoti" class="hiddenFields">
-                <h2>Notification (optional section)</h2>
+                <h2>Notification</h2>
                 <input type="text" id="fname" name="fname" placeholder="Receiver's First Name"><br>
                 <input type="text" id="lname" name="lname" placeholder="Receiver's Last Name"><br>
                 <select name="appType" id="appType">
@@ -61,7 +61,7 @@
                     <option value="Remove Request">Remove Request</option>
                     <option value="Add Request">Add Request</option>
                 </select><br><br>
-                <input type="text" placeholder="Choose Date of Application" onfocus="(this.type='date')"><br>
+                <input type="text" id="subDate" name="subDate" placeholder="Choose Date of Application" onfocus="(this.type='date')"><br>
                 <select name="appStatus" id="appStatus" placeholder="Status of Application">
                     <option disabled selected hidden>Choose Application Status<option>
                     <option value="was received">Received</option>
@@ -76,7 +76,7 @@
                 
                 <!--Newsletter form-->
                 <div id="showNews" class="hiddenFields">
-                <h2>Newsletter (optional section)</h2>
+                <h2>Newsletter</h2>
                 <input type="text" id="title" name="title" placeholder="Newsletter Title"><br>
                 <input type="text" id="subtitle" name="subtitle" placeholder="Subtitle"><br>
                 <textarea id="body1" name="body1"  placeholder="Additional Body section"></textarea><br>
@@ -89,7 +89,7 @@
                 
                 <!--Request form-->
                 <div id="showReq" class="hiddenFields">
-                    Hi
+                    This template requires no extra fields as it only send a confirmation code.
                 </div>
                 <!--END Request form-->
                 
