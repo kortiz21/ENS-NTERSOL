@@ -16,9 +16,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname))
 
 //For loading pages
-//home page
+//login page
 app.get("/", (req, res) => {
-        res.sendFile(__dirname + "/index.html");
+        res.sendFile(__dirname + "/login.html");
+});
+
+//home page
+app.get("/home", (req, res) => {
+        res.sendFile(__dirname + "/home.html");
 });
 
 //email form page page
@@ -32,6 +37,16 @@ app.get("/logs", (req, res) => {
 });
 
 ///////////////
+
+app.post('/login', function(req, res) {
+    
+    const uid = req.body.uid;
+    const pwd = req.body.pwd;
+    
+    if (uid == 'admin')
+        if (pwd == 'pass')
+            res.sendFile(__dirname + "/home.html");
+    });
 
 app.post('/send_email', function(req, res) {
   // receive and store form data
