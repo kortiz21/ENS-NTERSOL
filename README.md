@@ -6,8 +6,11 @@ Assisting NTERSOL in creating an emailing notification system via full-stack web
 
 ## Authors:
 Austin Purugganan: austinpurugganan@csu.fullerton.edu
+
 Kevin Ortiz: keortiz@csu.fullerton.edu
+
 Dylan Lackey: dylanlackey@csu.fullerton.edu
+
 Alex Chavez: schavez95@csu.fullerton.edu
 
 ## Faculty Advisor:
